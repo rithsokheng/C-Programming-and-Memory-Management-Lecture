@@ -48,21 +48,22 @@ flowchart TD
     H --> I["Automatic Memory Management (Reference Counting & Mark-and-Sweep GC)"]
 ```
 
-Chapters & Curriculum
+## Chapters & Curriculum
 
-Chapter Notes Code Reference Core Topics Covered
-01. C Basics Lecture Notes code_reference.c Hello World, compilation model, variables, data types, const, functions, casting, conditionals, loops, sizeof, header guards
-02. Structs Lecture Notes code_reference.c Struct definitions, positional vs designated initializers, pass-by-value, typedef, memory alignment, padding, offsetof
-03. Pointers and Arrays Lecture Notes code_reference.c Address operator &, dereferencing *, arrow ->, pointer arithmetic, array decay, 2D arrays, C strings, concatenation
-04. Enums Lecture Notes code_reference.c Enumeration types, implicit vs explicit values, switch pattern matching with enums, enum sizes in memory
-05. Unions Lecture Notes code_reference.c Shared memory semantics, overlapping fields, tagged unions / discriminated unions, network packet header parsing
-06. Stack and Heap Lecture Notes code_reference.c Stack frames, stack overflow, dangling pointers, heap allocation (malloc, calloc, realloc, free), memory leaks, endianness
-07. Advanced Pointers Lecture Notes code_reference.c Pointer-to-pointer (**), allocating through double pointers, arrays of pointers, generic void * pointers, generic swap with memcpy
-08. Building a Stack Data Structure Lecture Notes code_reference.c Dynamic generic Stack implementation, geometric resizing (2x), stack_new, stack_push, stack_pop, stack_free, void ** trade-offs
-09. SnakeLang Object System Lecture Notes code_reference.c Tagged object model, integer/float/string/Vector3 objects, dynamic object arrays, polymorphic length and add operations
-10. Garbage Collection Lecture Notes code_reference.c Automatic memory management, Reference Counting, cycle failure, Mark-and-Sweep GC, VM root set, tracing, sweeping
+| Chapter | Notes | Code Reference | Core Topics Covered |
+|:---|:---:|:---:|:---|
+| **01. C Basics** | [Lecture Notes](chapter-01-c-basics/README.md) | [code_reference.c](chapter-01-c-basics/code_reference.c) | Hello World, compilation model, variables, data types, `const`, functions, casting, conditionals, loops, `sizeof`, header guards |
+| **02. Structs** | [Lecture Notes](chapter-02-structs/README.md) | [code_reference.c](chapter-02-structs/code_reference.c) | Struct definitions, positional vs designated initializers, pass-by-value, `typedef`, memory alignment, padding, `offsetof` |
+| **03. Pointers and Arrays** | [Lecture Notes](chapter-03-pointers-and-arrays/README.md) | [code_reference.c](chapter-03-pointers-and-arrays/code_reference.c) | Address operator `&`, dereferencing `*`, arrow `->`, pointer arithmetic, array decay, 2D arrays, C strings, concatenation |
+| **04. Enums** | [Lecture Notes](chapter-04-enums/README.md) | [code_reference.c](chapter-04-enums/code_reference.c) | Enumeration types, implicit vs explicit values, `switch` pattern matching with enums, enum sizes in memory |
+| **05. Unions** | [Lecture Notes](chapter-05-unions/README.md) | [code_reference.c](chapter-05-unions/code_reference.c) | Shared memory semantics, overlapping fields, tagged unions / discriminated unions, network packet header parsing |
+| **06. Stack and Heap** | [Lecture Notes](chapter-06-stack-and-heap/README.md) | [code_reference.c](chapter-06-stack-and-heap/code_reference.c) | Stack frames, stack overflow, dangling pointers, heap allocation (`malloc`, `calloc`, `realloc`, `free`), memory leaks, endianness |
+| **07. Advanced Pointers** | [Lecture Notes](chapter-07-advanced-pointers/README.md) | [code_reference.c](chapter-07-advanced-pointers/code_reference.c) | Pointer-to-pointer (`**`), allocating through double pointers, arrays of pointers, generic `void *` pointers, generic swap with `memcpy` |
+| **08. Building a Stack Data Structure** | [Lecture Notes](chapter-08-stack-data-structure/README.md) | [code_reference.c](chapter-08-stack-data-structure/code_reference.c) | Dynamic generic Stack implementation, geometric resizing (2x), `stack_new`, `stack_push`, `stack_pop`, `stack_free`, `void **` trade-offs |
+| **09. SnakeLang Object System** | [Lecture Notes](chapter-09-snakelang-object-system/README.md) | [code_reference.c](chapter-09-snakelang-object-system/code_reference.c) | Tagged object model, integer/float/string/Vector3 objects, dynamic object arrays, polymorphic length and add operations |
+| **10. Garbage Collection** | [Lecture Notes](chapter-10-garbage-collection/README.md) | [code_reference.c](chapter-10-garbage-collection/code_reference.c) | Automatic memory management, Reference Counting, cycle failure, Mark-and-Sweep GC, VM root set, tracing, sweeping |
 
-How to Run the Code References
+## How to Run the Code References
 
 Every chapter includes a standalone, fully compilable C code reference file tested with gcc (with -Wall -Wextra -pedantic).
 
@@ -96,13 +97,13 @@ done
 
 ---
 
-Key Takeaways
+## Key Takeaways
 
-1. Everything eventually becomes memory
+### 1. Everything eventually becomes memory
 
 At the lowest practical level, program data occupies bytes in memory.
 
-2. Variables are names; pointers are addresses
+### 2. Variables are names; pointers are addresses
 
 ```c
 int x = 42;
@@ -114,11 +115,11 @@ int *p = &x;
 · p stores that address
 · *p accesses the value at that address
 
-3. C is strongly tied to data layout
+### 3. C is strongly tied to data layout
 
 Struct order, padding, array layout, pointer arithmetic, and unions all expose details that higher-level languages often hide.
 
-4. Stack memory has predictable function-scoped lifetimes
+### 4. Stack memory has predictable function-scoped lifetimes
 
 Good for:
 
@@ -126,7 +127,7 @@ Good for:
 · function parameters
 · fixed-size temporary data
 
-5. Heap memory gives dynamic lifetime and size
+### 5. Heap memory gives dynamic lifetime and size
 
 Good for:
 
@@ -136,7 +137,7 @@ Good for:
 
 But the programmer must manage ownership.
 
-6. malloc and free form a basic manual-management pair
+### 6. malloc and free form a basic manual-management pair
 
 ```c
 int *p = malloc(sizeof(int));
@@ -150,7 +151,7 @@ free(p);
 
 Every allocation should have a clear ownership story.
 
-7. C strings are null-terminated
+### 7. C strings are null-terminated
 
 Remember:
 
@@ -164,7 +165,7 @@ is stored conceptually as:
 h e l l o \0
 ```
 
-8. struct groups data
+### 8. struct groups data
 
 ```c
 typedef struct {
@@ -173,7 +174,7 @@ typedef struct {
 } Point_t;
 ```
 
-9. enum + union + struct is a powerful runtime representation
+### 9. enum + union + struct is a powerful runtime representation
 
 The pattern:
 
@@ -196,7 +197,7 @@ typedef struct {
 
 is the foundation of many dynamically typed runtime designs.
 
-10. Reference counting is simple but cannot detect cycles
+### 10. Reference counting is simple but cannot detect cycles
 
 ```text
 A -> B
@@ -207,7 +208,7 @@ A -> B
 
 The objects can keep each other's counts above zero forever.
 
-11. Mark-and-sweep uses reachability
+### 11. Mark-and-sweep uses reachability
 
 Start from roots.
 
@@ -215,7 +216,7 @@ Mark everything reachable.
 
 Sweep everything else.
 
-12. Garbage collection is not free
+### 12. Garbage collection is not free
 
 Automatic memory management moves complexity rather than eliminating it.
 
