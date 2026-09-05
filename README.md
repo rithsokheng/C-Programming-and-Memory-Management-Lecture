@@ -1,9 +1,4 @@
 # C Programming and Memory Management
-
-> A structured, GitHub-ready course repository based on the comprehensive lecture **“C Programming and Memory Management - Full Course”**.
-> Each chapter has its own folder containing complete lecture notes and a standalone, compilable C code reference file.
-
-
 ## Course Overview
 
 The course uses C as a practical way to understand how programs interact with memory. The main progression is:
