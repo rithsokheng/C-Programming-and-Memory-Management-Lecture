@@ -36,33 +36,15 @@ No previous C experience is required.
 
 ## Course Map & Mental Model
 
-```text
-C Syntax & Basics
-       │
-       ▼
-Structs & Memory Layout
-       │
-       ▼
-Addresses, Pointers & Arrays
-       │
-       ▼
-Enums & Unions (Tagged Unions)
-       │
-       ▼
-Stack Frames vs. Dynamic Heap (malloc / free)
-       │
-       ▼
-Advanced Pointers (Double Pointers, void *, memcpy)
-       │
-       ▼
-Generic Data Structures (Dynamic Stack)
-       │
-       ▼
-SnakeLang Tagged Object System
-       │
-       ▼
-Automatic Memory Management (Reference Counting & Mark-and-Sweep GC)
-```
+flowchart TD
+    A["C Syntax & Basics"] --> B["Structs & Memory Layout"]
+    B --> C["Addresses, Pointers & Arrays"]
+    C --> D["Enums & Unions (Tagged Unions)"]
+    D --> E["Stack Frames vs. Dynamic Heap (malloc / free)"]
+    E --> F["Advanced Pointers (Double Pointers, void *, memcpy)"]
+    F --> G["Generic Data Structures (Dynamic Stack)"]
+    G --> H["SnakeLang Tagged Object System"]
+    H --> I["Automatic Memory Management (Reference Counting & Mark-and-Sweep GC)"]
 
 
 ## Chapters & Curriculum
@@ -344,37 +326,15 @@ Do not assume every field contains a valid value simultaneously.
 
 The whole course can be reduced to one chain of ideas:
 
-```text
-C syntax
-   |
-   v
-Values
-   |
-   v
-Memory
-   |
-   v
-Addresses
-   |
-   v
-Pointers
-   |
-   v
-Dynamic allocation
-   |
-   v
-Data structures
-   |
-   v
-Objects
-   |
-   v
-Object references
-   |
-   v
-Garbage collection
-```
+flowchart TD
+    A["C syntax"] --> B["Values"]
+    B --> C["Memory"]
+    C --> D["Addresses"]
+    D --> E["Pointers"]
+    E --> F["Dynamic allocation"]
+    F --> G["Data structures"]
+    G --> H["Objects"]
+    H --> I["Object references"]
+    I --> J["Garbage collection"]
 
-Or, in one sentence:
-
-> **To understand memory management, understand where data lives, how it is addressed, how long it remains valid, what references keep it alive, and what mechanism eventually releases it.**
+**To understand memory management, understand where data lives, how it is addressed, how long it remains valid, what references keep it alive, and what mechanism eventually releases it.**
